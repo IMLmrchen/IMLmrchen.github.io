@@ -33,7 +33,7 @@ function en(){
     ci('.-abtcl', '<i class="bi bi-info-square"></i>About')
     ci('.-csmcl', '<i class="bi bi-box-arrow-up-right"></i>Gateway')
     ci('.-langset', '<i class="bi bi-translate"></i>Language selection：')
-    ci('.-title', 'Mr.chen official website')    
+    ci('.-title', 'Mr.Chen official website')    
     ci('.-examimg', 'Example Image')
 }
 
