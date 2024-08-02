@@ -30,13 +30,6 @@
     }
   </style>
 
-  <script src="
-https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
-"></script>
-  <script src="scripts/langcookie.js"></script>
-  <script src="scripts/lang.js"></script>
-  <script src="scripts/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -146,8 +139,14 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
         给开发者发电子邮件</a>
     </div>
   </div>
+  <script src="scripts/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+  <script src="scripts/jquery-3.5.1.min.js"></script>
+  <script src="scripts/lang.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+  <script src="scripts/bootstrap.js"></script>
   <script>
-    import Cookies from 'js-cookie'
+
     $('input:radio[id="btnradio1"]').click(function () {
       var checkValue = $('input:radio[id="btnradio1"]:checked').val();
       if (checkValue = "scn") { scn() }
@@ -160,7 +159,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
       var checkValue = $('input:radio[id="btnradio3"]:checked').val();
       if (checkValue = "en") { en() }
     });
-  </script>
+    </script>
   <link href="styles/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
 </body>
