@@ -1,4 +1,3 @@
-import Cookies from 'js-cookie'
 function ci(className, innerHTML) {
   const classToChange = document.querySelectorAll(className)
   for (let i = 0; i < classToChange.length; i++) {
@@ -17,7 +16,7 @@ function scn() {
   ci('.-title', 'Mr.Chen官方网站')
   ci('.-examimg', '示例图片')
   osct()
-  Cookies.set('lang', 'zh-CN', { expires: 30 })
+
 }
 function pcn() {
   document.querySelector('html').lang = 'zh-HT'
@@ -28,7 +27,7 @@ function pcn() {
   ci('.-title', 'Mr.Chen官方網站')
   ci('.-examimg', '示例圖片')
   opct()
-  Cookies.set('lang', 'zh-HT', { expires: 30 })
+
 }
 function en() {
   document.querySelector('html').lang = 'en'
@@ -39,6 +38,37 @@ function en() {
   ci('.-title', 'Mr.Chen official website')
   ci('.-examimg', 'Example Image')
   oet()
-  Cookies.set('lang', 'en', { expires: 30 })
+
 }
 
+switch (Cookies.get('lang')) {
+  case 'zh_CN':
+    scn()
+    break
+  case 'en':
+    en()
+    break
+  case 'zh-HT':
+    pcn()
+    break
+  default:
+    Cookies.set('lang', 'zh_CN')
+    scn()
+    break
+}
+$(document).ready(function () {
+  $('input[type=radio][name=btnradio]').change(function () {
+    if (this.value == 'scn') {
+      Cookies.set('language', 'zh_CN')
+      scn()
+    }
+    else if (this.value == 'en') {
+      Cookies.set('language', 'en')
+      en()
+    }
+    else {
+      Cookies.set('language', 'zh-HT')
+      pcn()
+    }
+  });
+});
