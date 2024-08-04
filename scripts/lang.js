@@ -15,8 +15,9 @@ function scn() {
   ci('.-langset', '<i class="bi bi-translate"></i>语种选择：')
   ci('.-title', 'Mr.Chen官方网站')
   ci('.-examimg', '示例图片')
+  ci('.abttxt', '关于...')
   osct()
-  $("input:radio[value=scn]").attr('checked','true');
+  $("input[name='btnradio'][value='scn']").attr("checked", true);
 }
 function pcn() {
   document.querySelector('html').lang = 'zh-HT'
@@ -27,7 +28,7 @@ function pcn() {
   ci('.-title', 'Mr.Chen官方網站')
   ci('.-examimg', '示例圖片')
   opct()
-  $("input:radio[value=pcn]").attr('checked','true');
+  $("input[name='btnradio'][value='pcn']").attr("checked", true);
 }
 function en() {
   document.querySelector('html').lang = 'en'
@@ -38,7 +39,7 @@ function en() {
   ci('.-title', 'Mr.Chen official website')
   ci('.-examimg', 'Example Image')
   oet()
-  $("input:radio[value=en]").attr('checked','true');
+  $("input[name='btnradio'][value='en']").attr("checked", true);
 }
 
 switch (Cookies.get('lang')) {
@@ -52,7 +53,7 @@ switch (Cookies.get('lang')) {
     pcn()
     break
   default:
-    Cookies.set('lang', 'zh_CN')
+    Cookies.set('lang', 'zh_CN', { expires: 30 })
     scn()
     break
 }
@@ -61,6 +62,7 @@ $(document).ready(function () {
     if (this.value == 'scn') {
       Cookies.set('language', 'zh_CN', { expires: 30 })
       scn()
+
     }
     else if (this.value == 'en') {
       Cookies.set('language', 'en', { expires: 30 })
