@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数助手</title>
+    <link rel="icon" href="https://pic.imgdb.cn/item/6682b410d9c307b7e91c1a49.png" type="image/x-icon" sizes="48x48">
+    <style type="text/css">
+        body {
+            background-image: url('https://pic.imgdb.cn/item/66a1bc0bd9c307b7e9f4bf6e.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: 60%;
+
+            width: auto
+        }
+
+        @font-face {
+            font-family: "Kingsoft_Cloud_Font";
+            src: url("Kingsoft_Cloud_Font.ttf");
+        }
+
+
+
+
+
+        a {
+      text-decoration: none;
+
+    }
+
+    .navtext {
+      font-family: "Kingsoft_Cloud_Font";
+      font-size: 22px
+    }
+
+    .navbar-custom {
+      background-color: rgb(239, 255, 255);
+    }
+
+    .jbtext {
+      color: black;
+      font-weight: bold;
+      padding: 10px;
+
+
+      cursor: pointer;
+      transition: color 0.3s;
+      -webkit-transition: color 0.3s;
+    }
+
+    .jbtext:hover {
+      color: rgb(0, 153, 255)
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <link href="styles/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-sm">
+          <a class="navbar-brand" href="index.html"><img src="https://pic.imgdb.cn/item/669fb3dbd9c307b7e91f9fac.png"
+              height="40"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class=" navtext -setcl jbtext" aria-current="page" href="setting.html"
+                  style="text-decoration: none;position: relative; "></a>
+              </li>
+              <li class="nav-item">
+                <a class="navtext  -abtcl jbtext" href="abt.html"
+                  style="text-decoration: none;position: relative;font-size: 22px; "></a>
+              </li>
+              <li class="nav-item dropdown navtext">
+                <a class=" dropdown-toggle -csmcl jbtext" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false" style="text-decoration:none ;">
+    
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+    
+            </ul>
+            <p class="navtext -langset" style="color: rgb(13,110,255);position: relative; top: 7px;"></p>
+            <div class="btn-group btn-group-sm " role="group" aria-label="Small button group">
+              <input type="radio" class="btn-check " name="btnradio" id="btnradio1" autocomplete="off" value="scn">
+    
+              <label class="btn btn-outline-primary" for="btnradio1">简中</label>
+    
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" value="pcn">
+              <label class="btn btn-outline-primary" for="btnradio2">繁中</label>
+    
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" value="en">
+              <label class="btn btn-outline-primary" for="btnradio3">En</label>
+    
+            </div>
+          </div>
+        </div>
+      </nav>
+<div class="container-sm">
+    <div class="card"style="position: relative; top: 1pc;">
+        <div class="card-body" >
+            <h2 style="font-family: Kingsoft_Cloud_Font">欢迎使用Function Helper（函数助手）！</h2>
+
+            <p>一个综合性函数代数类求解工具</p>
+        </div>
+      </div>
+</div>
+    <div class="container-sm" style="position: relative; top: 2pc;">
+        <form>
+
+            <!-- <p> ( <input type="number" id="p1x" placeholder="第一点x" required style="width: 70px;"> ,
+                <input type="number" id="p1y" placeholder="第一点y" required style="width: 70px;"> )
+            </p> -->
+            <h3>两点求一线</h3>
+            <hr>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">（ </span>
+                <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"placeholder="第一点的x坐标" id="p1x">
+                <span class="input-group-text" id="inputGroup-sizing-default">，</span>
+                <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="第一点的y坐标" id="p1y">
+                <span class="input-group-text" id="inputGroup-sizing-default"> ）</span>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">（ </span>
+                <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"placeholder="第二点的x坐标"id="p2x">
+                <span class="input-group-text" id="inputGroup-sizing-default">，</span>
+                <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="第二点的y坐标" id="p2y">
+                <span class="input-group-text" id="inputGroup-sizing-default"> ）</span>
+            </div>
+            <!-- <p>( <input type="number" id="p2x" placeholder="第二点x" required style="width: 70px;"> ,
+                <input type="number" id="p2y" placeholder="第二点y" required style="width: 70px;"> )
+            </p> -->
+        </form>
+        <p><input id="solve" onclick="solve()" type="button" value="求解"></p>
+        <p>该函数解析式为：y=<input id="k" type="text" readonly="readonly" style="width:70px">x+<input id="b" type="text"
+                readonly="readonly" style="width:50px"></p>
+        <script>
+            function solve() {
+                var x1 = document.querySelector("#p1x").value.valueOf();
+                var y1 = document.querySelector("#p1y").value.valueOf();
+                var x2 = document.querySelector("#p2x").value.valueOf();
+                var y2 = document.querySelector("#p2y").value.valueOf();
+                var m = x1 - x2
+                var n = y1 - y2
+                var k = n / m
+                var b = y1 - (k * x1)
+                document.querySelector("#k").value = k;
+                document.querySelector("#b").value = b;
+            }
+
+        </script>
+    <hr>
+    <div>
+    <h3>两线求一点</h3>
+       <hr>
+    <p>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">第一个一次函数式：y=</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"placeholder="k" id="k1">
+            <span class="input-group-text" id="inputGroup-sizing-default">x+</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="b" id="b1">
+            <span class="input-group-text" id="inputGroup-sizing-default"> </span>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">第一个一次函数式：y=</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"placeholder="k"id="k2">
+            <span class="input-group-text" id="inputGroup-sizing-default">x+</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="b" id="b2">
+            <span class="input-group-text" id="inputGroup-sizing-default"> </span>
+        </div>
+        <p><input id="ans" onclick="ans()" type="button" value="我要答案"></p>
+        <p>两直线交点坐标为：（<input id="x0" type="text" readonly="readonly" style="width:50px">，<input id="y0" type="text"
+                readonly="readonly" style="width:50px">）</p>
+        <script>
+            function ans() {
+                var k1 = document.querySelector("#k1").value.valueOf();
+                var b1 = document.querySelector("#b1").value.valueOf();
+                var k2 = document.querySelector("#k2").value.valueOf();
+                var b2 = document.querySelector("#b2").value.valueOf();
+                var xtongyong = (b2 - b1) / (k1 - k2)
+                var ytongyong = k1 * xtongyong
+                var yl = Number(ytongyong) + Number(b1)
+                document.querySelector("#x0").value = xtongyong;
+                document.querySelector("#y0").value = yl;
+            }
+
+        </script>
+    <hr>
+</div>
+    <div>
+        <h3>一线求两点</h3>
+        <hr>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">一次函数解析式：y=</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"placeholder="k" id="kjiaodian">
+            <span class="input-group-text" id="inputGroup-sizing-default">x+</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="b" id="bjiaodian">
+            <span class="input-group-text" id="inputGroup-sizing-default"> </span>
+        </div>
+        <p><input id="ans1" onclick="answer()" type="button" value="立刻马上给我求解"></p>
+        <p>
+            该函数图像与x轴交于点（<input id="xout" type="text" readonly="readonly" style="width:50px"> ,0)
+            <br>
+            与y轴交于点（0, <input id="yout" type="text" readonly="readonly" style="width:50px">)
+        </p>
+        <script>
+            function answer() {
+                var kcal = document.querySelector("#kjiaodian").value.valueOf();
+                var bcal = document.querySelector("#bjiaodian").value.valueOf();
+                var xout = Number(-bcal) / Number(kcal)
+                var yout = Number(bcal)
+                document.querySelector("#xout").value = xout;
+                document.querySelector("#yout").value = yout;
+            }
+
+        </script>
+    </div>
+</div>
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+</body>
+
+</html>
