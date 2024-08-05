@@ -6,6 +6,15 @@ function ci(className, innerHTML) {
   }
 }
 
+function osct() {
+
+}
+function opct() {
+
+}
+function oet() {
+
+}
 
 function scn() {
   document.querySelector('html').lang = 'zh-CN'
@@ -17,7 +26,7 @@ function scn() {
   ci('.-examimg', '示例图片')
   ci('.abttxt', '关于...')
   osct()
-  $("input[name='btnradio'][value='scn']").attr("checked", true);
+
 }
 function pcn() {
   document.querySelector('html').lang = 'zh-HT'
@@ -28,7 +37,7 @@ function pcn() {
   ci('.-title', 'Mr.Chen官方網站')
   ci('.-examimg', '示例圖片')
   opct()
-  $("input[name='btnradio'][value='pcn']").attr("checked", true);
+
 }
 function en() {
   document.querySelector('html').lang = 'en'
@@ -39,38 +48,50 @@ function en() {
   ci('.-title', 'Mr.Chen official website')
   ci('.-examimg', 'Example Image')
   oet()
-  $("input[name='btnradio'][value='en']").attr("checked", true);
+
 }
+
 
 switch (Cookies.get('lang')) {
   case 'zh_CN':
     scn()
+    $("input[name='btnradio'][value='scn']").attr("checked", true);
+
     break
   case 'en':
     en()
+    $("input[name='btnradio'][value='en']").attr("checked", true);
+
     break
   case 'zh-HT':
     pcn()
+    $("input[name='btnradio'][value='pcn']").attr("checked", true);
+
     break
   default:
     Cookies.set('lang', 'zh_CN', { expires: 30 })
     scn()
+    $("input[name='btnradio'][value='scn']").attr("checked", true);
     break
 }
 $(document).ready(function () {
   $('input[type=radio][name=btnradio]').change(function () {
     if (this.value == 'scn') {
-      Cookies.set('language', 'zh_CN', { expires: 30 })
+      Cookies.set('lang', 'zh_CN', { expires: 30 })
       scn()
 
     }
     else if (this.value == 'en') {
-      Cookies.set('language', 'en', { expires: 30 })
+      Cookies.set('lang', 'en', { expires: 30 })
       en()
+
+
     }
     else {
-      Cookies.set('language', 'zh-HT', { expires: 30 })
+      Cookies.set('lang', 'zh-HT', { expires: 30 })
       pcn()
+
+
     }
   });
 });
