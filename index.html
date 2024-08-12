@@ -190,18 +190,13 @@
       if (checkValue = "en") { en() }
     });
 
-    var div = document.getElementById("myDiv");
-    if (div.classList.contains("hidden") && alerts == 1) {
-      div.classList.remove("hidden");
-    } else {
-      div.classList.add("hidden");
-    }
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-    alert(isAndroid)
+
     console.log(isAndroid)
-    if (isAndroid=='true'||isiOS=='true') {
+    var div = document.getElementById("myDiv");
+    if (isAndroid==true||isiOS==true) {
       div.classList.remove("hidden");
     } else {
       div.classList.add("hidden");
