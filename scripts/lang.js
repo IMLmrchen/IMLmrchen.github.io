@@ -6,16 +6,6 @@ function ci(className, innerHTML) {
   }
 }
 
-function osct() {
-
-}
-function opct() {
-
-}
-function oet() {
-
-}
-
 function scn() {
   document.querySelector('html').lang = 'zh-CN'
   ci('.-setcl', '<i class="bi bi-gear"></i>设置')
