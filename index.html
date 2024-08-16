@@ -202,7 +202,7 @@
                 //给位置展示组件赋值
                 document.getElementById('markPage').src = markUrl;
             } else { //定位组件在定位失败后，也会触发message, event.data为null
-                alert('定位失败');
+
             }
 
         }, false);
@@ -216,7 +216,7 @@
             document.getElementById("geoPage")
                 .contentWindow.postMessage('getLocation.robust', '*');
             }
-        }, 6000); //6s为推荐值，业务调用方可根据自己的需求设置改时间，不建议太短
+        }, 8000); //6s为推荐值，业务调用方可根据自己的需求设置改时间，不建议太短
 
         
     $('input:radio[id="btnradio1"]').click(function () {
