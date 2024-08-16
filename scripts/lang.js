@@ -22,7 +22,7 @@ function scn() {
   ci('.-abtcl', '<i class="bi bi-info-square"></i>关于')
   ci('.-csmcl', '<i class="bi bi-box-arrow-up-right"></i>传送门')
   ci('.-langset', '<i class="bi bi-translate"></i>语种选择：')
-  ci('.-title', 'Mr.Chen官方网站')
+  ci('.-title', 'Mr.Chen官方网站-网站主页')
   ci('.-examimg', '示例图片')
   ci('.abttxt', '关于...')
   ci('.-memtitle', '回忆-我们的十一')
@@ -35,7 +35,7 @@ function pcn() {
   ci('.-abtcl', '<i class="bi bi-info-square"></i>關於')
   ci('.-csmcl', '<i class="bi bi-box-arrow-up-right"></i>傳送門')
   ci('.-langset', '<i class="bi bi-translate"></i>語種選擇：')
-  ci('.-title', 'Mr.Chen官方網站')
+  ci('.-title', 'Mr.Chen官方網站-網站主頁')
   ci('.-examimg', '示例圖片')
   opct()
 
@@ -46,7 +46,7 @@ function en() {
   ci('.-abtcl', '<i class="bi bi-info-square"></i>About')
   ci('.-csmcl', '<i class="bi bi-box-arrow-up-right"></i>Gateway')
   ci('.-langset', '<i class="bi bi-translate"></i> Language selection：')
-  ci('.-title', 'Mr.Chen official website')
+  ci('.-title', 'Mr.Chen official website-Homepage')
   ci('.-examimg', 'Example Image')
   oet()
 
