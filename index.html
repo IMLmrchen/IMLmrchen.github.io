@@ -5,14 +5,109 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name='description' content='Mr.Chen官方网站-初中生自制综合性信息公开网站-编程作品、假如（IF）、趣事杂文、优美文摘以及我们的回忆……-无论如何，欢迎任何人访问！'>
-  <title class="-title">Mr.Chen官方网站-网站主页</title>
+    <script src="scripts/jquery-3.5.1.min.js"></script>
+  <script>
+
+    window.addEventListener('load', function () {
+
+      document.getElementById("blueld").classList.add("no")
+
+    });
+
+  </script>
+
   <link rel="icon" href="https://pic.imgdb.cn/item/6682b410d9c307b7e91c1a49.png" type="image/x-icon" sizes="48x48">
 
   <style>
+    .no {
+      display: none;
+    }
+
+    .loader {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .jimu-primary-loading:before,
+    .jimu-primary-loading:after {
+      position: absolute;
+      top: 0;
+      content: '';
+    }
+
+    .jimu-primary-loading:before {
+      left: -19.992px;
+    }
+
+    .jimu-primary-loading:after {
+      left: 19.992px;
+      -webkit-animation-delay: 0.32s !important;
+      animation-delay: 0.32s !important;
+    }
+
+    .jimu-primary-loading:before,
+    .jimu-primary-loading:after,
+    .jimu-primary-loading {
+      background: #076fe5;
+      -webkit-animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+      animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+      width: 13.6px;
+      height: 32px;
+    }
+
+    .jimu-primary-loading {
+      text-indent: -9999em;
+      margin: auto;
+      position: absolute;
+      right: calc(50% - 6.8px);
+      top: calc(50% - 16px);
+      -webkit-animation-delay: 0.16s !important;
+      animation-delay: 0.16s !important;
+    }
+
+    @-webkit-keyframes loading-keys-app-loading {
+
+      0%,
+      80%,
+      100% {
+        opacity: .75;
+        box-shadow: 0 0 #076fe5;
+        height: 32px;
+      }
+
+      40% {
+        opacity: 1;
+        box-shadow: 0 -8px #076fe5;
+        height: 40px;
+      }
+    }
+
+    @keyframes loading-keys-app-loading {
+
+      0%,
+      80%,
+      100% {
+        opacity: .75;
+        box-shadow: 0 0 #076fe5;
+        height: 32px;
+      }
+
+      40% {
+        opacity: 1;
+        box-shadow: 0 -8px #076fe5;
+        height: 40px;
+      }
+    }
+
     @font-face {
       font-family: "Kingsoft_Cloud_Font";
       src: url("Kingsoft_Cloud_Font.ttf");
     }
+
+
 
 
     .hidden {
@@ -73,12 +168,21 @@
 </head>
 
 <body>
-<h1 style="display:none;">Mr.Chen官方网站</h1>
+
+  <div class="loader" id="blueld">
+    <div class="justify-content-center jimu-primary-loading"></div>
+
+  </div>
+
+
+
+  <h1 style="display:none;">Mr.Chen官方网站</h1>
+
   <link href="styles/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-custom" id="navb">
+  <nav class="navbar navbar-expand-lg navbar-custom ymys" id="navb" name="ymys">
     <div class="container-sm">
       <a class="navbar-brand" href="index.html"><img src="https://pic.imgdb.cn/item/669fb3dbd9c307b7e91f9fac.png"
           height="40"></a>
@@ -130,7 +234,7 @@
   </nav>
 
   <!-- silde -->
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel"
+  <div id="carouselExampleCaptions" class="carousel slide ymys" data-bs-ride="carousel"
     style="position: relative;bottom: 0px;">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -173,15 +277,17 @@
     </button>
   </div>
 
-  <div class="container-sm">
+  <div class="container-sm" name="ymys">
     <div class="card">
-      <div class="card-body">
+      <div class="card-body" id="ididid">
         来自
       </div>
     </div>
+
+
     <!--  通过 iframe 嵌入前端定位组件，此处没有隐藏定位组件，使用了定位组件的在定位中视觉特效  -->
-    <h2>让我猜猜你在哪：</h2>
-    <iframe id="geoPage" width="100%" height="30%" frameborder=0 scrolling="no" allow="geolocation"
+    <h2 class="ymys">让我猜猜你在哪：</h2>
+    <iframe id="geoPage" width="100%" height="30%" frameborder=0 scrolling="no" allow="geolocation" name="ymys"
       src="https://apis.map.qq.com/tools/geolocation?key=5N6BZ-2GLWV-4VYP3-5F4P5-A27DV-LHFCT&referer=wk&effect=zoom"></iframe>
 
     <script type="text/JavaScript">
@@ -233,6 +339,7 @@
       if (checkValue = "en") { en() }
     });
 
+    
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
@@ -244,20 +351,27 @@
     } else {
       div.classList.add("hidden");
     }
+
+
+
+
+    
+
+
+
+  </script>
+
+    <script src="https://mapapi.qq.com/web/mapComponents/geoLocation/v/geolocation.min.js"></script>
+    <script src="scripts/oscheck.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/langcookie.js"></script>
+
+    <script src="scripts/lang.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script>
+
     </script>
-
-
-
-  </div>
-  <script src="https://mapapi.qq.com/web/mapComponents/geoLocation/v/geolocation.min.js"></script>
-  <script src="scripts/oscheck.js"></script>
-  <script src="scripts/theme.js"></script>
-  <script src="scripts/langcookie.js"></script>
-  <script src="scripts/jquery-3.5.1.min.js"></script>
-  <script src="scripts/lang.js"></script>
-  <script src="scripts/bootstrap.min.js"></script>
-  <script src="scripts/bootstrap.js"></script>
-
 </body>
 
 </html>
