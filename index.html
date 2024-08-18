@@ -310,41 +310,10 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <div class="container-sm " id="bcbcbc">
-    <div class="alert alert-info alert-dismissible fade show" role="alert">
-      <span class="themeauto"></span>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
 
-  </div>
-  <script>
-
-    var bap =document.getElementById("bcbcbc")
-      if(Cookies.get('noalert') != "enable") {
-        bap.classList.remove("hidden");
-    } else {
-      bap.classList.add("hidden");
-    }
-  </script>
   <script src="scripts/player.js"></script>
   <link href="styles/player.css" rel="stylesheet">
-  <div id="aplayer01" style="color: black;">
 
-  </div>
-  <script>
-    const ap = new APlayer({
-
-      container: document.getElementById('aplayer01'),
-      lrcType: 3,
-      audio: [{
-        name: '送你一朵小红花',//音频名称
-        artist: '赵英俊',//艺术家
-        url: 'RichardHammond.mp3',//文件地址
-        cover: 'covv.png',//封面地址
-        lrc: "mus.lrc"
-      }]
-    });
-  </script>
 
   <!--  通过 iframe 嵌入前端定位组件，此处没有隐藏定位组件，使用了定位组件的在定位中视觉特效  -->
   <div class="container-sm" style="z-index: 0;">
@@ -356,34 +325,70 @@
       </div>
     </div>
   </div>
-  <!-- 时间获取与显示 -->
-  <script>
-    setInterval(function () {
-      //当前时间
-      var time = new Date();
-      var year = time.getFullYear();
-      var month = time.getMonth() + 1;
-      var date = time.getDate();
-      var day = time.getDay();
-      var hour = time.getHours();
-      var minute = time.getMinutes();
-      var second = time.getSeconds();
-      if (hour < 10) {
-        hour = "0" + hour;
-      }
-      if (minute < 10) {
-        minute = "0" + minute;
-      }
-      if (second < 10) {
-        second = "0" + second;
-      }
-      $("#time").html(year + "年" + month + "月" + date + "日" + " " + hour + "时" + minute + "分" + second + "秒");
-    })
-  </script>
-  <iframe id="geoPage" width="0%" height="0%" frameborder=0 scrolling="no" allow="geolocation" name="ymys"
-    src="https://apis.map.qq.com/tools/geolocation?key=5N6BZ-2GLWV-4VYP3-5F4P5-A27DV-LHFCT&referer=wk&effect=zoom"></iframe>
+  <div class="container-sm" style="z-index: 0;">
+    <div class="row">
+      <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card">
+          <div class="card-header">金曲慰人心</div>
+          <div class="card-body">
+            <div id="aplayer01" style="color: black;">
 
-  <script type="text/JavaScript">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-header">这话有用么？</div>
+          <div class="card-body">
+            <h3>螃蟹死之前，是活的</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const ap = new APlayer({
+
+        container: document.getElementById('aplayer01'),
+        lrcType: 3,
+        audio: [{
+          name: '送你一朵小红花',//音频名称
+          artist: '赵英俊',//艺术家
+          url: 'RichardHammond.mp3',//文件地址
+          cover: 'covv.png',//封面地址
+          lrc: "mus.lrc"
+        }]
+      });
+    </script>
+
+    <!-- 时间获取与显示 -->
+    <script>
+      setInterval(function () {
+        //当前时间
+        var time = new Date();
+        var year = time.getFullYear();
+        var month = time.getMonth() + 1;
+        var date = time.getDate();
+        var day = time.getDay();
+        var hour = time.getHours();
+        var minute = time.getMinutes();
+        var second = time.getSeconds();
+        if (hour < 10) {
+          hour = "0" + hour;
+        }
+        if (minute < 10) {
+          minute = "0" + minute;
+        }
+        if (second < 10) {
+          second = "0" + second;
+        }
+        $("#time").html(year + "年" + month + "月" + date + "日" + " " + hour + "时" + minute + "分" + second + "秒");
+      })
+    </script>
+    <iframe id="geoPage" width="0%" height="0%" frameborder=0 scrolling="no" allow="geolocation" name="ymys"
+      src="https://apis.map.qq.com/tools/geolocation?key=5N6BZ-2GLWV-4VYP3-5F4P5-A27DV-LHFCT&referer=wk&effect=zoom"></iframe>
+
+    <script type="text/JavaScript">
         var loc;
         var isMapInit = false;
         //监听定位组件的message事件
@@ -446,14 +451,25 @@
   </script>
 
 
-  <script src="https://mapapi.qq.com/web/mapComponents/geoLocation/v/geolocation.min.js"></script>
-  <script src="scripts/oscheck.js"></script>
-  <script src="scripts/theme.js"></script>
-  <script src="scripts/langcookie.js"></script>
+    <script src="https://mapapi.qq.com/web/mapComponents/geoLocation/v/geolocation.min.js"></script>
+    <script src="scripts/oscheck.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/langcookie.js"></script>
 
-  <script src="scripts/lang.js"></script>
-  <script src="scripts/bootstrap.min.js"></script>
-  <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/lang.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script>
+      function osct() {
+
+      }
+      function opct() {
+
+      }
+      function oet() {
+
+      }
+    </script>
 
 </body>
 
