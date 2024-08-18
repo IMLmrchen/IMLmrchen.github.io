@@ -1,6 +1,4 @@
 
-if (Cookies.get('noalert') == "enable") {
-
     const html = document.querySelector('html')
 
     var dl = 1
@@ -24,4 +22,4 @@ if (Cookies.get('noalert') == "enable") {
         dl = 1
     }
     console.log('dl=' + dl)
-}
+
