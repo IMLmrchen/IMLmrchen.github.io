@@ -1,5 +1,5 @@
 Cookies.remove('noalert');
-Cookies.remove('lang');
+
 function ci(className, innerHTML) {
   const classToChange = document.querySelectorAll(className)
   for (let i = 0; i < classToChange.length; i++) {
