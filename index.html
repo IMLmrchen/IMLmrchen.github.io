@@ -20,8 +20,14 @@
         }
       }, speed);
     }
-    window.addEventListener('load', function () {
 
+    window.addEventListener('load', function () {
+      setTimeout(
+        () => {
+          fadeOut(fuid)
+        },
+        4 * 1000
+      );
     });
   </script>
 
@@ -189,6 +195,15 @@
       font-family: "Kingsoft_Cloud_Font";
       font-size: 22px
     }
+
+    .pi {
+      margin: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
   </style>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -203,6 +218,7 @@
   <div style="width: 100%; height: 100%; z-index: 9; position: absolute;" id="fuid" class="loadbg">
     <div class="loader" id="blueld">
       <div class="justify-content-center jimu-primary-loading"></div>
+
     </div>
 
   </div>
