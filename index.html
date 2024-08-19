@@ -282,7 +282,23 @@
       </div>
     </div>
   </nav>
+<script src="scripts/langcookie.js"></script>
+<script src="scripts/lang.js"></script>
+<script>
+    $('input:radio[id="btnradio1"]').click(function () {
+      var checkValue = $('input:radio[id="btnradio1"]:checked').val();
+      if (checkValue = "scn") { scn() }
+    });
+    $('input:radio[id="btnradio2"]').click(function () {
+      var checkValue = $('input:radio[id="btnradio2"]:checked').val();
+      if (checkValue = "pcn") { pcn() }
+    });
+    $('input:radio[id="btnradio3"]').click(function () {
+      var checkValue = $('input:radio[id="btnradio3"]:checked').val();
+      if (checkValue = "en") { en() }
+    });
 
+</script>
   <!-- silde -->
   <div id="carouselExampleCaptions" class="carousel slide ymys" data-bs-ride="carousel"
     style="position: relative;bottom: 0px; z-index: 0;">
@@ -377,30 +393,6 @@
       });
     </script>
 
-    <!-- 时间获取与显示 -->
-    <script>
-      setInterval(function () {
-        //当前时间
-        var time = new Date();
-        var year = time.getFullYear();
-        var month = time.getMonth() + 1;
-        var date = time.getDate();
-        var day = time.getDay();
-        var hour = time.getHours();
-        var minute = time.getMinutes();
-        var second = time.getSeconds();
-        if (hour < 10) {
-          hour = "0" + hour;
-        }
-        if (minute < 10) {
-          minute = "0" + minute;
-        }
-        if (second < 10) {
-          second = "0" + second;
-        }
-        $("#time").html(year + "年" + month + "月" + date + "日" + " " + hour + "时" + minute + "分" + second + "秒");
-      })
-    </script>
     <iframe id="geoPage" width="0%" height="0%" frameborder=0 scrolling="no" allow="geolocation" name="ymys"
       src="https://apis.map.qq.com/tools/geolocation?key=5N6BZ-2GLWV-4VYP3-5F4P5-A27DV-LHFCT&referer=wk&effect=zoom"></iframe>
 
@@ -442,37 +434,13 @@
             }
         }, 8000); //6s为推荐值，业务调用方可根据自己的需求设置改时间，不建议太短
 
-        
-    $('input:radio[id="btnradio1"]').click(function () {
-      var checkValue = $('input:radio[id="btnradio1"]:checked').val();
-      if (checkValue = "scn") { scn() }
-    });
-    $('input:radio[id="btnradio2"]').click(function () {
-      var checkValue = $('input:radio[id="btnradio2"]:checked').val();
-      if (checkValue = "pcn") { pcn() }
-    });
-    $('input:radio[id="btnradio3"]').click(function () {
-      var checkValue = $('input:radio[id="btnradio3"]:checked').val();
-      if (checkValue = "en") { en() }
-    });
-
-    
-    var u = navigator.userAgent;
-    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-
-    console.log(isAndroid)
-
-
   </script>
 
 
     <script src="https://mapapi.qq.com/web/mapComponents/geoLocation/v/geolocation.min.js"></script>
     <script src="scripts/oscheck.js"></script>
     <script src="scripts/theme.js"></script>
-    <script src="scripts/langcookie.js"></script>
 
-    <script src="scripts/lang.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/bootstrap.js"></script>
     <script>
