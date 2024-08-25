@@ -1,14 +1,23 @@
 <!DOCTYPE html>
+<!-- 发布前解除注释！！！ -->
 <html lang="zh-CN" data-bs-theme="light">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name='description' content='Mr.Chen官方网站-初中生自制综合性信息公开网站-编程作品、假如（IF）、趣事杂文、优美文摘以及我们的回忆……-无论如何，欢迎任何人访问！'>
-  <title class="-title">Mr.Chen官方网站-网站主页</title>
+  <meta name="description" content="Mr.Chen官方网站-初中生自制综合性信息公开网站-编程作品、假如（IF）、趣事杂文、优美文摘以及我们的回忆……-无论如何，欢迎任何人访问！">
+  <title class="-maintitle">Mr.Chen官方网站-网站主页</title>
   <script src="scripts/jquery-3.5.1.min.js"></script>
+  <script src="scripts/langcookie.js"></script>
+  <!-- 发布前解除注释！！！ -->
+  <script src="scripts/bootstrap.min.js"></script>
+
   <script>
+    if(Cookies.get('noala') != "already"){
+     alert("由于本网站的代码与引用的api较多，加载时间可能较长，请见谅。另外由于本网站是测试版，所以内容不完善,请期待正式版问世！")
+   }
     function fadeOut(element) {
+      var isfade = 0
       var speed = 5;
       var num = 100;
       var st = setInterval(function () {
@@ -20,28 +29,40 @@
         }
       }, speed);
     }
-
+    if (Cookies.get("position") == undefined) {
+      isfade = 4500
+    }
+    else {
+      isfade = 0
+    }
     window.addEventListener('load', function () {
       setTimeout(
         () => {
           fadeOut(fuid)
         },
-        4000
+        isfade
       );
     });
+    Cookies.set('noala', 'already');
+
   </script>
-  <link href="styles/mrchen.css" rel="stylesheet">
+  <script src="scripts/mouseclick.js"></script>
   <link rel="icon" href="https://pic.imgdb.cn/item/6682b410d9c307b7e91c1a49.png" type="image/x-icon" sizes="48x48">
+  <link rel="stylesheet" href="styles/mrchen.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
+  <style>
+
+  </style>
 </head>
 
 <body>
-  <div style="width: 100%; height: 100%; z-index: 9; position: absolute;" id="fuid" class="loadbg">
+
+  <div style="width: 100%; height: 100%; z-index: 16; position: absolute;" id="fuid" class="loadbg">
     <div class="loader" id="blueld">
       <div class="justify-content-center jimu-primary-loading"></div>
 
@@ -108,23 +129,7 @@
       </div>
     </div>
   </nav>
-<script src="scripts/langcookie.js"></script>
-<script src="scripts/lang.js"></script>
-<script>
-    $('input:radio[id="btnradio1"]').click(function () {
-      var checkValue = $('input:radio[id="btnradio1"]:checked').val();
-      if (checkValue = "scn") { scn() }
-    });
-    $('input:radio[id="btnradio2"]').click(function () {
-      var checkValue = $('input:radio[id="btnradio2"]:checked').val();
-      if (checkValue = "pcn") { pcn() }
-    });
-    $('input:radio[id="btnradio3"]').click(function () {
-      var checkValue = $('input:radio[id="btnradio3"]:checked').val();
-      if (checkValue = "en") { en() }
-    });
 
-</script>
   <!-- silde -->
   <div id="carouselExampleCaptions" class="carousel slide ymys" data-bs-ride="carousel"
     style="position: relative;bottom: 0px; z-index: 0;">
@@ -137,22 +142,26 @@
         aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="3600">
-        <img src="https://pic.imgdb.cn/item/668947a1d9c307b7e97dc0b7.png" class="d-block w-100" alt="..." height="350">
-        <div class="carousel-caption  d-md-block" style="color: white;">
-          <h5>1</h5>
-          <p class="-examimg"></p>
+      <div class="carousel-item active" data-bs-interval="4000">
+        <img src="https://pic.imgdb.cn/item/669f2e78d9c307b7e99b8501.png" class="d-block w-100 carousel-image"
+          alt="函数助手（Function Helper）">
+        <div class="carousel-caption  d-md-block" style="color: black;">
+          <h3 class="fh"></h3>
+          <p class="fhdes"></p>
+          <a class="btn btn-md btn-primary use" href="funhel1.html"></a>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="3600">
-        <img src="https://pic.imgdb.cn/item/668947a1d9c307b7e97dc0b7.png" class="d-block w-100" alt="..." height="350">
+        <img src="https://pic.imgdb.cn/item/668947a1d9c307b7e97dc0b7.png" class="d-block w-100 carousel-image"
+          alt="...">
         <div class="carousel-caption  d-md-block" style="color: white;">
           <h5>2</h5>
           <p class="-examimg"></p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="3600">
-        <img src="https://pic.imgdb.cn/item/668947a1d9c307b7e97dc0b7.png" class="d-block w-100" alt="..." height="350">
+        <img src="https://pic.imgdb.cn/item/668947a1d9c307b7e97dc0b7.png" class="d-block w-100 carousel-image"
+          alt="...">
         <div class="carousel-caption  d-md-block" style="color: white;">
           <h5>3</h5>
           <p class="-examimg"></p>
@@ -172,22 +181,26 @@
   <script src="scripts/player.js"></script>
   <link href="styles/player.css" rel="stylesheet">
 
-
-  <!--  通过 iframe 嵌入前端定位组件，此处没有隐藏定位组件，使用了定位组件的在定位中视觉特效  -->
-  <div class="container-sm" style="z-index: 0;">
+  <div class="alert alert-info alert-dismissible fade show " role="alert" style="position: relative; top: 5px;">
+    <span class="alerttt"></span>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <!-- -->
+  <div class="container-sm" style="z-index: 0; position: relative; top: 5px;">
     <div class="card">
       <div class="card-body">
         <h2 class="card-title">来自<span id="loca01"></span>的访客，你好！</h2>
-        <h6 class="card-subtitle mb-2 text-body-secondary">欢迎访问Mr.Chen官方网站</h6>
-        <p class="card-text">现在是<span id="time"></span></p>
+        <h6 class="card-subtitle mb-2 text-body-secondary welcome-text"></h6>
+        <span class="card-text time"></span>
       </div>
     </div>
   </div>
-  <div class="container-sm" style="z-index: 0;">
+
+  <div class="container-sm" style="z-index: 0; position: relative;top: 15px;">
     <div class="row">
       <div class="col-sm-6 mb-3 mb-sm-0">
         <div class="card">
-          <div class="card-header">金曲慰人心</div>
+          <div class="card-header goodsong"> </div>
           <div class="card-body">
             <div id="aplayer01" style="color: black;">
 
@@ -197,58 +210,119 @@
       </div>
       <div class="col-sm-6">
         <div class="card">
-          <div class="card-header">这话有用么？</div>
+          <div class="card-header mayuse">这话有用么？</div>
           <div class="card-body">
             <h5 id="know"></h5>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="container-xl" style="position: relative;top: 2pc;">
+    <div class="row align-items-start">
+      <div class="col">
+        <a href="#" style="text-decoration: none;">
+          <div class="card ">
+            <div class="card-body">
+              <h4 class="card-title mem"></h4>
+              <h6 class="card-subtitle mb-2 text-body-secondary memdes"></h6>
+              <p class="card-text memcontent"></p>
 
-    <script>
-      const ap = new APlayer({
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col">
+        <a href="passages.html" style="text-decoration: none;">
+          <div class="card sha">
+            <div class="card-body">
+              <h4 class="card-title passage"></h4>
+              <h6 class=" mb-2 passdes card-subtitle jb"></h6>
+              <p style="position: relative;top: 4px;" class="blog"></p>
 
-        container: document.getElementById('aplayer01'),
-        lrcType: 3,
-        audio: [{
-          name: '送你一朵小红花',//音频名称
-          artist: '赵英俊',//艺术家
-          url: 'RichardHammond.mp3',//文件地址
-          cover: 'covv.png',//封面地址
-          lrc: "mus.lrc"
-        }]
-      });
-    </script>
+              <p class="card-text goin" style="color: rgb(0, 182, 228);"><i class="bi bi-arrow-right"></i>&ensp;点击卡片进入
+              </p>
 
-    <iframe id="geoPage" width="0%" height="0%" frameborder=0 scrolling="no" allow="geolocation" name="ymys"
-      src="https://apis.map.qq.com/tools/geolocation?key=5N6BZ-2GLWV-4VYP3-5F4P5-A27DV-LHFCT&referer=wk&effect=zoom"></iframe>
 
-    <script type="text/JavaScript">
-        var loc;
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col">
+        <a href="codings.html" style="text-decoration: none;">
+        <div class="card sha">
+          <div class="card-body">
+            <h4 class="card-title coding"></h4>
+            <h6 class="card-subtitle mb-2 jb codedes">一个属于编程作品的集合（工具与游戏）</h6>
+            <p style="position: relative;top: 4px;" class="codepas"></p>
+            <p class="card-text goin" style="color: rgb(0, 182, 228);"><i class="bi bi-arrow-right"></i>&ensp;点击卡片进入</p>
+
+          </div>
+        </div>
+      </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const ap = new APlayer({
+
+      container: document.getElementById('aplayer01'),
+      lrcType: 3,
+      audio: [{
+        name: '送你一朵小红花',//音频名称
+        artist: '赵英俊',//艺术家
+        url: 'RichardHammond.mp3',//文件地址
+        cover: 'covv.png',//封面地址
+        lrc: "mus.lrc"
+      }]
+    });
+  </script>
+  <script>
+
+  </script>
+  <iframe id="geoPage" width="0%" height="0%" frameborder=0 scrolling="no" allow="geolocation" name="ymys"
+    src="https://apis.map.qq.com/tools/geolocation?key=5N6BZ-2GLWV-4VYP3-5F4P5-A27DV-LHFCT&referer=wk&effect=zoom"></iframe>
+
+  <script type="text/JavaScript">
+            if (Cookies.get('position')==undefined){
+              var loc;
         var isMapInit = false;
         //监听定位组件的message事件
+
         window.addEventListener('message', function(event) {
             loc = event.data; // 接收位置信息
 
- 
+
             if(loc  && loc.module == 'geolocation') { //定位成功,防止其他应用也会向该页面post信息，需判断module是否为'geolocation'
                 var markUrl = 'https://apis.map.qq.com/tools/poimarker' +
                 '?marker=coord:' + loc.lat + ',' + loc.lng +
                 ';title:我的位置;addr:' + (loc.addr || loc.city) +
-                '&key=your key&referer=myapp';
+                '&key=5N6BZ-2GLWV-4VYP3-5F4P5-A27DV-LHFCT&referer=wk';
                 var city = loc.city
                 var adds = loc.district
-                var outpt = city+adds
-                console.log(outpt);
-                document.getElementById('loca01').innerHTML = outpt ;
-
+                var outpt =""
+                if (adds == undefined||adds==null){
+                  outpt=city
+                }
+                else{
+                  outpt=city+adds
+                }
+                outpt=outpt.toString();
+                if(Cookies.get('position')==undefined){
+                Cookies.set('position', outpt);
+                }
+                document.getElementById('loca01').innerHTML =Cookies.get('position') ;
                 //给位置展示组件赋值
                 document.getElementById('markPage').src = markUrl;
-            } else { //定位组件在定位失败后，也会触发message, event.data为null
+                console.log(adds)
+              } else { //定位组件在定位失败后，也会触发message, event.data为null
 
             }
 
         }, false);
+    
         //为防止定位组件在message事件监听前已经触发定位成功事件，在此处显示请求一次位置信息
         document.getElementById("geoPage").contentWindow.postMessage('getLocation', '*');
  
@@ -259,27 +333,103 @@
             document.getElementById("geoPage")
                 .contentWindow.postMessage('getLocation.robust', '*');
             }
-        }, 8000); //6s为推荐值，业务调用方可根据自己的需求设置改时间，不建议太短
+        }, 6000); //6s为推荐值，业务调用方可根据自己的需求设置改时间，不建议太短
+
+          }
+          else{
+            document.getElementById('loca01').innerHTML =Cookies.get('position') ;
+          }
+
+        
+    $('input:radio[id="btnradio1"]').click(function () {
+      var checkValue = $('input:radio[id="btnradio1"]:checked').val();
+      if (checkValue = "scn") { scn() }
+    });
+    $('input:radio[id="btnradio2"]').click(function () {
+      var checkValue = $('input:radio[id="btnradio2"]:checked').val();
+      if (checkValue = "pcn") { pcn() }
+    });
+    $('input:radio[id="btnradio3"]').click(function () {
+      var checkValue = $('input:radio[id="btnradio3"]:checked').val();
+      if (checkValue = "en") { en() }
+    });
+
+    
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+    console.log(isAndroid)
+
 
   </script>
 
-    <script src="scripts/uselesswords.js"></script>
-    <script src="https://mapapi.qq.com/web/mapComponents/geoLocation/v/geolocation.min.js"></script>
-    <script src="scripts/oscheck.js"></script>
-    <script src="scripts/theme.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
-    <script src="scripts/bootstrap.js"></script>
-    <script>
-      function osct() {
+  <script src="scripts/uselesswords.js"></script>
+  <script src="https://mapapi.qq.com/web/mapComponents/geoLocation/v/geolocation.min.js"></script>
+  <script src="scripts/oscheck.js"></script>
+  <script src="scripts/theme.js"></script>
 
-      }
-      function opct() {
 
-      }
-      function oet() {
 
-      }
-    </script>
+
+  <script>
+    function osct() {
+      ci('.welcome-text', '欢迎访问Mr.Chen官方网站')
+      ci('.time', "现在是<span id='yyyy'></span>年<span id='mmmm'></span>月<span id='ssss'></span>日  <span id='hh'></span>时<span id='mm'></span>分<span id='ss'></span>秒")
+      ci('.goodsong', '金曲慰人心')
+      ci('.mayuse', '这话有用么？')
+      ci('.alerttt', '<i class="bi bi-exclamation-circle"></i>&ensp;由于特殊技术性原因，我暂时不能为主页的所有文本提供多种语言翻译支持，这个问题日后将被解决，请见谅！')
+      ci('.fh', '函数助手（Function Helper）')
+      ci('.fhdes', '一个综合性函数代数类求解工具')
+      ci('.use', '<i class="bi bi-hand-index-thumb"></i>&ensp;使用')
+      ci('.mem', '回忆-我们的十一')
+      ci('.memdes', '十一十一，无与伦比，具备实力，永争第一！')
+      ci('.memcontent', '电子同学录的完整版预计将于<b>2024年9月17日</b>上线（恰逢中秋佳节），敬请期待！')
+      ci('.passage', '<i class="bi bi-vector-pen"></i> 文章集聚地')
+      ci('.passdes', '随便写点东西，也不乏有好文章')
+      ci('.coding', '<i class="bi bi-code-slash"></i> 程序之美')
+      ci('.blog', "真正的“博客”")
+    }
+    function opct() {
+      ci('.welcome-text', '歡迎訪問Mr.Chen官方網站')
+      ci('.time', "現在是<span id='yyyy'></span>年<span id='mmmm'></span>月<span id='ssss'></span>日  <span id='hh'></span>時<span id='mm'></span>分<span id='ss'></span>秒")
+      ci('.goodsong', '金曲慰人心')
+      ci('.mayuse', '這話有用麼？')
+      ci('.alerttt', '<i class="bi bi-exclamation-circle"></i>&ensp;由於特殊技術性原因，我暫時不能爲主頁的所有文本提供多種語言翻譯支持，這個問題日後將被解決，請見諒！')
+      ci('.fh', '函數助手（Function Helper）')
+      ci('.fhdes', '一個綜合性函數代數類求解工具')
+      ci('.use', '<i class="bi bi-hand-index-thumb"></i>&ensp;使用')
+      ci('.mem', '回憶-我們的十一')
+      ci('.memdes', '十一十一，無與倫比，具備實力，永爭第一！')
+      ci('.memcontent', '電子同學錄的完整版預計將於<b>2024年9月17日上線</b>（恰逢中秋佳節），敬請期待！')
+      ci('.passage', '<i class="bi bi-vector-pen"></i> 文章集聚地')
+      ci('.passdes', '隨便寫點東西，也不乏有好文章')
+      ci('.coding', '<i class="bi bi-code-slash"></i> 程序之美')
+      ci('.blog', "真正的“博客”")
+    }
+    function oet() {
+      ci('.welcome-text', "Welcome to visit Mr.Chen's official website")
+      ci('.time', "Present time: <span id='mmmm'></span> <span id='ssss'></span>,<span id='yyyy'></span> <span id='hh'></span>:<span id='mm'></span>:<span id='ss'></span>")
+      ci('.goodsong', "A good song comforts people's hearts")
+      ci('.mayuse', 'Is this sentence useful?')
+      ci('.alerttt', '<i class="bi bi-exclamation-circle"></i>&ensp;Due to special technical reasons, I am currently unable to provide multilingual translation support for all texts on the homepage. This issue will be resolved in the future, please forgive me!')
+      ci('.fh', 'Function Helper')
+      ci('.fhdes', 'A comprehensive algebraic function solving tool')
+      ci('.use', '<i class="bi bi-hand-index-thumb"></i>&ensp;Use')
+      ci('.mem', 'Memories - Our Class 11')
+      ci('.memdes', 'Class 11, unrivaled, with the strength to always be first!')
+      ci('.memcontent', 'The complete version of the electronic student record is expected to be launched on <b>September 17, 2024</b> (coinciding with the Mid Autumn Festival), stay tuned!')
+      ci('.passage', '<i class="bi bi-vector-pen"></i> Article gathering place')
+      ci('.passdes', 'Write something casually, there are also good articles available')
+      ci('.coding', '<i class="bi bi-code-slash"></i> The Beauty of Programs')
+      ci('.blog', "The real 'blog'")
+    }
+
+  </script>
+  <script src="scripts/lang.js"></script>
+<div class="container-sm">
+  <p style="position: fixed;bottom: 0; font-size: 12px; color: gray;z-index: -1;">这是测试版，不代表最终质量！</p>
+</div>
 
 </body>
 
