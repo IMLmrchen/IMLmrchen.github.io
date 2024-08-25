@@ -1,176 +1,256 @@
+/* 深浅检测 */
 @media (prefers-color-scheme: light) {
-    .jbtext {
-      color: black;
+  .jbtext {
+    color: black;
 
-      padding: 10px;
-
-
-      cursor: pointer;
-      transition: color 0.3s;
-      -webkit-transition: color 0.3s;
-    }
-
-    .jbtext:hover {
-      color: rgb(0, 153, 255)
-    }
+    padding: 10px;
 
 
-    .loadbg {
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      z-index: 3;
-      background-color: rgb(255, 255, 255);
-
-    }
+    cursor: pointer;
+    transition: color 0.3s;
+    -webkit-transition: color 0.3s;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .jbtext {
-      color: white;
-
-      padding: 10px;
-
-
-      cursor: pointer;
-      transition: color 0.3s;
-      -webkit-transition: color 0.3s;
-    }
-
-    .jbtext:hover {
-      color: rgb(0, 153, 255)
-    }
-
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    .loadbg {
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      z-index: 3;
-      background-color: rgb(44, 44, 44);
-    }
+  .jbtext:hover {
+    color: rgb(0, 153, 255)
   }
 
-  .no {
-    display: none;
+
+  .loadbg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 3;
+    background-color: rgb(255, 255, 255);
+
   }
 
-  .loader {
+  .sha::before {
+    content: "";
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 10px 15px 2px rgb(149, 183, 255);
+    opacity: 0;
+  }
+  .sha::after {
+    content: "";
+    border-radius: 5px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 10px 15px 2px rgb(149, 183, 255);
+      opacity: 0;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+.navbar{
+  background-color: rgb(228, 251, 255);
+}
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .jbtext {
+    color: white;
+
+    padding: 10px;
+
+
+    cursor: pointer;
+    transition: color 0.3s;
+    -webkit-transition: color 0.3s;
   }
 
-  .jimu-primary-loading:before,
-  .jimu-primary-loading:after {
+  .jbtext:hover {
+    color: rgb(0, 153, 255)
+  }
+
+  .navbar{
+    background-color: rgb(33, 43, 59);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .loadbg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 3;
+    background-color: rgb(44, 44, 44);
+  }
+
+  .sha::before {
+    content: "";
     position: absolute;
     top: 0;
-    content: '';
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 10px 15px 2px rgb(0, 57, 214);
+    opacity: 0;
   }
-
-  .jimu-primary-loading:before {
-    left: -19.992px;
+  .sha::after {
+    content: "";
+    border-radius: 5px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 10px 15px 2px rgb(0, 57, 214);
+      opacity: 0;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
+}
+/* 深浅检测结束 */
+.no {
+  display: none;
+}
 
-  .jimu-primary-loading:after {
-    left: 19.992px;
-    -webkit-animation-delay: 0.32s !important;
-    animation-delay: 0.32s !important;
-  }
+.loader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
-  .jimu-primary-loading:before,
-  .jimu-primary-loading:after,
-  .jimu-primary-loading {
-    background: #076fe5;
-    -webkit-animation: loading-keys-app-loading 0.8s infinite ease-in-out;
-    animation: loading-keys-app-loading 0.8s infinite ease-in-out;
-    width: 13.6px;
+.jimu-primary-loading:before,
+.jimu-primary-loading:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+
+.jimu-primary-loading:before {
+  left: -19.992px;
+}
+
+.jimu-primary-loading:after {
+  left: 19.992px;
+  -webkit-animation-delay: 0.32s !important;
+  animation-delay: 0.32s !important;
+}
+
+.jimu-primary-loading:before,
+.jimu-primary-loading:after,
+.jimu-primary-loading {
+  background: #076fe5;
+  -webkit-animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+  animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+  width: 13.6px;
+  height: 32px;
+}
+
+.jimu-primary-loading {
+  text-indent: -9999em;
+  margin: auto;
+  position: absolute;
+  right: calc(50% - 6.8px);
+  top: calc(50% - 16px);
+  -webkit-animation-delay: 0.16s !important;
+  animation-delay: 0.16s !important;
+}
+
+@-webkit-keyframes loading-keys-app-loading {
+
+  0%,
+  80%,
+  100% {
+    opacity: .75;
+    box-shadow: 0 0 #076fe5;
     height: 32px;
   }
 
-  .jimu-primary-loading {
-    text-indent: -9999em;
-    margin: auto;
-    position: absolute;
-    right: calc(50% - 6.8px);
-    top: calc(50% - 16px);
-    -webkit-animation-delay: 0.16s !important;
-    animation-delay: 0.16s !important;
+  40% {
+    opacity: 1;
+    box-shadow: 0 -8px #076fe5;
+    height: 40px;
+  }
+}
+
+@keyframes loading-keys-app-loading {
+
+  0%,
+  80%,
+  100% {
+    opacity: .75;
+    box-shadow: 0 0 #076fe5;
+    height: 32px;
   }
 
-  @-webkit-keyframes loading-keys-app-loading {
-
-    0%,
-    80%,
-    100% {
-      opacity: .75;
-      box-shadow: 0 0 #076fe5;
-      height: 32px;
-    }
-
-    40% {
-      opacity: 1;
-      box-shadow: 0 -8px #076fe5;
-      height: 40px;
-    }
+  40% {
+    opacity: 1;
+    box-shadow: 0 -8px #076fe5;
+    height: 40px;
   }
+}
 
-  @keyframes loading-keys-app-loading {
+@font-face {
+  font-family: "Kingsoft_Cloud_Font";
+  src: url("https://cdn.jsdelivr.net/gh/IMLmrchen/IMLmrchen.github.io@main/Kingsoft_Cloud_Font.ttf");
+}
 
-    0%,
-    80%,
-    100% {
-      opacity: .75;
-      box-shadow: 0 0 #076fe5;
-      height: 32px;
-    }
 
-    40% {
-      opacity: 1;
-      box-shadow: 0 -8px #076fe5;
-      height: 40px;
-    }
+.hidden {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+.navtext {
+  font-family: "Kingsoft_Cloud_Font";
+  font-size: 22px
+}
+
+.pi {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.carousel-image {
+  height: 420px;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.sha {
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0px 0px 0px 0px rgb(0, 85, 182);
+  cursor: pointer;
+  .jb{
+    color: rgb(150, 150, 150);
   }
+}
 
-  @font-face {
-    font-family: "Kingsoft_Cloud_Font";
-    src: url("https://cdn.jsdelivr.net/gh/IMLmrchen/IMLmrchen.github.io@main/Kingsoft_Cloud_Font.ttf");
+
+
+.sha:hover::after {
+  opacity: 1;
+}
+.sha:hover {
+  transform: scale(1.03, 1.03);
+  color: rgb(0, 153, 255);
+
+  .jb {
+    color: rgb(0, 114, 190);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
-
-
-  .hidden {
-    display: none;
-  }
-
-  a {
-    text-decoration: none;
-
-  }
-
-  .navtext {
-    font-family: "Kingsoft_Cloud_Font";
-    font-size: 22px
-  }
-
-  .pi {
-    margin: auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-  }
-
-  .carousel-image {
-    height: 410px;
-    object-fit: cover;
-    filter: brightness(0.8);
-  }
+}
