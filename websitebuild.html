@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- 发布前解除注释！！！ -->
+<html lang="zh-CN" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mr.Chen官方网站-初中生自制综合性信息公开网站-编程作品、假如（IF）、趣事杂文、优美文摘以及我们的回忆……-无论如何，欢迎任何人访问！">
+    <title class="">网站建设记</title>
+    <script src="scripts/jquery-3.5.1.min.js"></script>
+    <script src="scripts/langcookie.js"></script>
+    <!-- 发布前解除注释！！！ -->
+    <script src="scripts/bootstrap.min.js"></script>
+
+    <script>
+        // if(Cookies.get('noala') != "already"){
+        //   alert("由于本网站的代码与引用的api较多，加载时间可能较长，请见谅。另外由于本网站是测试版，所以内容不完善,请期待正式版问世！")
+        // }
+        function fadeOut(element) {
+            var isfade = 0
+            var speed = 5;
+            var num = 100;
+            var st = setInterval(function () {
+                num--;
+                element.style.opacity = num / 100;
+                if (num <= 0) {
+                    clearInterval(st);
+                    $("div.loadbg").remove();
+                }
+            }, speed);
+        }
+        if (Cookies.get("position") == undefined) {
+            isfade = 4500
+        }
+        else {
+            isfade = 0
+        }
+        window.addEventListener('load', function () {
+            setTimeout(
+                () => {
+                    fadeOut(fuid)
+                },
+                isfade
+            );
+        });
+        // Cookies.set('noala', 'already');
+
+    </script>
+    <script src="scripts/mouseclick.js"></script>
+    <link rel="icon" href="https://pic.imgdb.cn/item/6682b410d9c307b7e91c1a49.png" type="image/x-icon" sizes="48x48">
+    <link rel="stylesheet" href="styles/mrchen.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div style="width: 100%; height: 100%; z-index: 16; position: absolute;" id="fuid" class="loadbg">
+        <div class="loader" id="blueld">
+            <div class="justify-content-center jimu-primary-loading"></div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <h1 style="display:none;">Mr.Chen官方网站</h1>
+
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom ymys" id="navb" name="ymys" style="z-index: 1;">
+        <div class="container-sm">
+            <a class="navbar-brand" href="index.html"><img src="https://pic.imgdb.cn/item/669fb3dbd9c307b7e91f9fac.png"
+                    height="40"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class=" navtext -setcl jbtext" aria-current="page" href="setting.html"
+                            style="text-decoration: none;position: relative; "></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navtext  -abtcl jbtext" href="abt.html"
+                            style="text-decoration: none;position: relative;font-size: 22px; "></a>
+                    </li>
+                    <li class="nav-item dropdown navtext">
+                        <a class=" dropdown-toggle -csmcl jbtext" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="text-decoration:none ;">
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <p class="navtext -langset" style="color: rgb(62, 139, 255);position: relative; top: 7px;"></p>
+                <div class="btn-group btn-group-sm " role="group" aria-label="Small button group">
+                    <input type="radio" class="btn-check " name="btnradio" id="btnradio1" autocomplete="off"
+                        value="scn">
+
+                    <label for="btnradio1" name="langbtn" id="01" class="btn btn-outline-primary ">简中</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" value="pcn">
+                    <label for="btnradio2" name="langbtn" id="02" class="btn btn-outline-primary">繁中</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" value="en">
+                    <label for="btnradio3" name="langbtn" id="03" class="btn btn-outline-primary">En</label>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-sm" style="position: relative; top: 2pc;">
+        <h2>网站建设记</h2>
+        <hr>
+
+        <p>
+            网站建设的过程非常艰辛，但碍于时间，文章写不完了。<br>等我有时间了一定好好的写一写
+        </p>
+    </div>
+    <script>
+
+        $('input:radio[id="btnradio1"]').click(function () {
+            var checkValue = $('input:radio[id="btnradio1"]:checked').val();
+            if (checkValue = "scn") { scn() }
+        });
+        $('input:radio[id="btnradio2"]').click(function () {
+            var checkValue = $('input:radio[id="btnradio2"]:checked').val();
+            if (checkValue = "pcn") { pcn() }
+        });
+        $('input:radio[id="btnradio3"]').click(function () {
+            var checkValue = $('input:radio[id="btnradio3"]:checked').val();
+            if (checkValue = "en") { en() }
+        });
+
+    </script>
+
+    <script src="scripts/uselesswords.js"></script>
+    <script src="https://mapapi.qq.com/web/mapComponents/geoLocation/v/geolocation.min.js"></script>
+    <script src="scripts/oscheck.js"></script>
+    <script src="scripts/theme.js"></script>
+
+
+
+
+    <script>
+        function osct() {
+            ci('.pastitle', 'Mr.Chen官方网站-文章集聚地')
+
+        }
+        function opct() {
+            ci('.pastitle', 'Mr.Chen官方網站-文章集聚地')
+
+        }
+        function oet() {
+            ci('.pastitle', "Mr. Chen's official website - Article gathering place")
+
+        }
+
+    </script>
+    <script src="scripts/lang.js"></script>
