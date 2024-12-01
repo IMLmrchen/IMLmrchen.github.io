@@ -272,10 +272,10 @@
       container: document.getElementById('aplayer01'),
       lrcType: 3,
       audio: [{
-        name: '晴天',//音频名称
-        artist: '周杰伦',//艺术家
-        url: 'SunshineLove.aac',//文件地址
-        cover: 'https://pic.imgdb.cn/item/674c1394d0e0a243d4db96c8.png',//封面地址
+        name: '晴天',
+        artist: '周杰伦',
+        url: 'SunshineLove.mp3',
+        cover: 'https://pic.imgdb.cn/item/674c1394d0e0a243d4db96c8.png',
         lrc: "mus.lrc"
       }]
     });
@@ -290,13 +290,13 @@
             if (Cookies.get('position')==undefined){
               var loc;
         var isMapInit = false;
-        //监听定位组件的message事件
+
 
         window.addEventListener('message', function(event) {
-            loc = event.data; // 接收位置信息
+            loc = event.data; 
 
 
-            if(loc  && loc.module == 'geolocation') { //定位成功,防止其他应用也会向该页面post信息，需判断module是否为'geolocation'
+            if(loc  && loc.module == 'geolocation') {
                 var markUrl = 'https://apis.map.qq.com/tools/poimarker' +
                 '?marker=coord:' + loc.lat + ',' + loc.lng +
                 ';title:我的位置;addr:' + (loc.addr || loc.city) +
@@ -315,26 +315,26 @@
                 Cookies.set('position', outpt);
                 }
                 document.getElementById('loca01').innerHTML =Cookies.get('position') ;
-                //给位置展示组件赋值
+
                 document.getElementById('markPage').src = markUrl;
                 console.log(adds)
-              } else { //定位组件在定位失败后，也会触发message, event.data为null
+              } else { 
 
             }
 
         }, false);
     
-        //为防止定位组件在message事件监听前已经触发定位成功事件，在此处显示请求一次位置信息
+
         document.getElementById("geoPage").contentWindow.postMessage('getLocation', '*');
  
-        //设置6s超时，防止定位组件长时间获取位置信息未响应
+
         setTimeout(function() {
             if(!loc) {
-                //主动与前端定位组件通信（可选），获取粗糙的IP定位结果
+
             document.getElementById("geoPage")
                 .contentWindow.postMessage('getLocation.robust', '*');
             }
-        }, 6000); //6s为推荐值，业务调用方可根据自己的需求设置改时间，不建议太短
+        }, 6000);
 
           }
           else{
