@@ -216,8 +216,12 @@
     <div class="content">
         <canvas class="snow" id="snow" width="1349" height="400"></canvas>
         <div class="main-text">
-            <h1><br><br>网站停服升级中...</h1>
+            <h1>由于学习任务繁忙，本站暂时断更</h1>
+            <h2>另外，距离2025届中考只剩<span id="l"></span>天了</h2>
+        <ul style="margin: 0 auto; width: 500px;">
+            <li style="font-size: 20px;">看完它就去复习，好吗？:)</li>
 
+        </ul>
 
         </div>
 <!--
@@ -238,7 +242,15 @@
             </div>
         </div>
     </div>
+<script type="text/javascript"> 
 
+    var date1 = new Date(); 
+    var date2 = new Date("06/25/2025"); 
+
+    var Difference_In_Time = date2.getTime() - date1.getTime();
+    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24); 
+    document.getElementById('l').innerHTML =Difference_In_Days ;
+</script>
 
     <script>
         (function () {
