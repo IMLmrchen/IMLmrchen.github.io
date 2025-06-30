@@ -45,6 +45,26 @@
             padding: 0;
 
         }
+
+        @media (max-width: 800px) {
+            .row.row-cols-auto {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            
+            .row.row-cols-auto .col {
+                white-space: nowrap;
+                font-size: 14px;
+            }
+            
+            .row.row-cols-auto img {
+                max-height: 60px;
+            }
+        }
+        
+        .col img {
+            flex-shrink: 0;
+        }
     </style>
 </head>
 
@@ -71,7 +91,7 @@
             </div>
             <div class="col">
                 <h4>别急，马上就端上来</h4>
-                <p style="color: gray;font-size: 16;">编写网页不容易，为自己的“冷淡”和他人的“诬陷”单开一页就更难<br>仍在制作中，课多，理解（话说你真的会看吗...）</p>
+                <p style="color: gray;">编写网页不容易，为自己的“冷淡”和他人的“诬陷”单开一页就更难<br>仍在制作中，课多，理解（话说你真的会看吗...）</p>
             </div>
         </div>
     </div>
