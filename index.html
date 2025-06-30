@@ -199,7 +199,7 @@
   <div class="container-sm" style="z-index: 0; position: relative; top: 5px;">
     <div class="card">
       <div class="card-body">
-        <h2 class="card-title">来自<span id="loca01"></span>的访客，你好！</h2>
+        <h2 class="card-title">来自银河系的访客，你好！</h2>
         <h6 class="card-subtitle mb-2 text-body-secondary welcome-text"></h6>
         <span class="card-text time"></span>
       </div>
@@ -292,84 +292,6 @@
   <script>
 
   </script>
-  <iframe id="geoPage" width="0%" height="0%" frameborder=0 scrolling="no" allow="geolocation" name="ymys"
-    src="https://apis.map.qq.com/tools/geolocation?key=5N6BZ-2GLWV-4VYP3-5F4P5-A27DV-LHFCT&referer=wk&effect=zoom"></iframe>
-
-  <script type="text/JavaScript">
-            if (Cookies.get('position')==undefined){
-              var loc;
-        var isMapInit = false;
-
-
-        window.addEventListener('message', function(event) {
-            loc = event.data; 
-
-
-            if(loc  && loc.module == 'geolocation') {
-                var markUrl = 'https://apis.map.qq.com/tools/poimarker' +
-                '?marker=coord:' + loc.lat + ',' + loc.lng +
-                ';title:我的位置;addr:' + (loc.addr || loc.city) +
-                '&key=5N6BZ-2GLWV-4VYP3-5F4P5-A27DV-LHFCT&referer=wk';
-                var city = loc.city
-                var adds = loc.district
-                var outpt =""
-                if (adds == undefined||adds==null){
-                  outpt=city
-                }
-                else{
-                  outpt=city+adds
-                }
-                outpt=outpt.toString();
-                if(Cookies.get('position')==undefined){
-                Cookies.set('position', outpt);
-                }
-                document.getElementById('loca01').innerHTML =Cookies.get('position') ;
-
-                document.getElementById('markPage').src = markUrl;
-                console.log(adds)
-              } else { 
-
-            }
-
-        }, false);
-    
-
-        document.getElementById("geoPage").contentWindow.postMessage('getLocation', '*');
- 
-
-        setTimeout(function() {
-            if(!loc) {
-
-            document.getElementById("geoPage")
-                .contentWindow.postMessage('getLocation.robust', '*');
-            }
-        }, 6000);
-
-          }
-          else{
-            document.getElementById('loca01').innerHTML =Cookies.get('position') ;
-          }
-
-        
-    $('input:radio[id="btnradio1"]').click(function () {
-      var checkValue = $('input:radio[id="btnradio1"]:checked').val();
-      if (checkValue = "scn") { scn() }
-    });
-    $('input:radio[id="btnradio2"]').click(function () {
-      var checkValue = $('input:radio[id="btnradio2"]:checked').val();
-      if (checkValue = "pcn") { pcn() }
-    });
-    $('input:radio[id="btnradio3"]').click(function () {
-      var checkValue = $('input:radio[id="btnradio3"]:checked').val();
-      if (checkValue = "en") { en() }
-    });
-
-    
-    var u = navigator.userAgent;
-    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-
-    console.log(isAndroid)
 
 
   </script>
