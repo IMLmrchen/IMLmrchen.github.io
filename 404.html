@@ -1,339 +1,74 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh-CN">
 <head>
-    <html lang="zh-CN">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>升级...</title>
-    <link rel="icon" href="https://pic.imgdb.cn/item/6682b410d9c307b7e91c1a49.png" type="image/x-icon" sizes="48x48">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 迷失在太空中</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;500&display=swap">
     <style>
-        html,
-        body {
-            height: 100%;
-            min-height: 450px;
-            font-size: 32px;
-            font-weight: 500;
-            color: #5d7399;
-            margin: 0;
-            padding: 0;
-            border: 0;
-        }
-
-        .content {
-            height: 100%;
-            position: relative;
-            z-index: 1;
-            background-color: #d2e1ec;
-            background-image: -webkit-linear-gradient(top, #bbcfe1 0%, #e8f2f6 80%);
-            background-image: linear-gradient(to bottom, #bbcfe1 0%, #e8f2f6 80%);
-            overflow: hidden;
-        }
-
-        .snow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 20;
-        }
-
-        .main-text {
-            padding: 20vh 20px 0 20px;
-            text-align: center;
-            line-height: 2em;
-            font-size: 5vh;
-        }
-
-        .main-text h1 {
-            font-size: 45px;
-            line-height: 48px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .main-text-a {
-            height: 32px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-
-        .main-text-a a {
-            font-size: 16px;
-            text-decoration: none;
-            color: #0066CC;
-        }
-
-        .main-text-a a:hover {
-            color: #000;
-        }
-
-        .home-link {
-            font-size: 0.6em;
-            font-weight: 400;
-            color: inherit;
-            text-decoration: none;
-            opacity: 0.6;
-            border-bottom: 1px dashed rgba(93, 115, 153, 0.5);
-        }
-
-        .home-link:hover {
-            opacity: 1;
-        }
-
-        .ground {
-            height: 160px;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background: #f6f9fa;
-            box-shadow: 0 0 10px 10px #f6f9fa;
-        }
-
-        .ground:before,
-        .ground:after {
-            content: '';
-            display: block;
-            width: 250px;
-            height: 250px;
-            position: absolute;
-            top: -62.5px;
-            z-index: -1;
-            background: transparent;
-            -webkit-transform: scaleX(0.2) rotate(45deg);
-            transform: scaleX(0.2) rotate(45deg);
-        }
-
-        .ground:after {
-            left: 50%;
-            margin-left: -166.66667px;
-            box-shadow: -340px 260px 15px #8193b2, -620px 580px 15px #8193b2, -900px 900px 15px #b0bccf, -1155px 1245px 15px #b4bed1, -1515px 1485px 15px #8193b2, -1755px 1845px 15px #8a9bb8, -2050px 2150px 15px #91a1bc, -2425px 2375px 15px #bac4d5, -2695px 2705px 15px #a1aec6, -3020px 2980px 15px #8193b2, -3315px 3285px 15px #94a3be, -3555px 3645px 15px #9aa9c2, -3910px 3890px 15px #b0bccf, -4180px 4220px 15px #bac4d5, -4535px 4465px 15px #a7b4c9, -4840px 4760px 15px #94a3be;
-        }
-
-        .ground:before {
-            right: 50%;
-            margin-right: -166.66667px;
-            box-shadow: 325px -275px 15px #b4bed1, 620px -580px 15px #adb9cd, 925px -875px 15px #a1aec6, 1220px -1180px 15px #b7c1d3, 1545px -1455px 15px #7e90b0, 1795px -1805px 15px #b0bccf, 2080px -2120px 15px #b7c1d3, 2395px -2405px 15px #8e9eba, 2730px -2670px 15px #b7c1d3, 2995px -3005px 15px #9dabc4, 3285px -3315px 15px #a1aec6, 3620px -3580px 15px #8193b2, 3880px -3920px 15px #aab6cb, 4225px -4175px 15px #9dabc4, 4510px -4490px 15px #8e9eba, 4785px -4815px 15px #a7b4c9;
-        }
-
-        .mound {
-            margin-top: -80px;
-            font-weight: 800;
-            font-size: 180px;
-            text-align: center;
-            color: #dd4040;
-            pointer-events: none;
-        }
-
-        .mound:before {
-            content: '';
-            display: block;
-            width: 600px;
-            height: 200px;
-            position: absolute;
-            left: 50%;
-            margin-left: -300px;
-            top: 50px;
-            z-index: 1;
-            border-radius: 100%;
-            background-color: #e8f2f6;
-            background-image: -webkit-linear-gradient(top, #dee8f1, #f6f9fa 60px);
-            background-image: linear-gradient(to bottom, #dee8f1, #f6f9fa 60px);
-        }
-
-        .mound:after {
-            content: '';
-            display: block;
-            width: 28px;
-            height: 6px;
-            position: absolute;
-            left: 50%;
-            margin-left: -150px;
-            top: 68px;
-            z-index: 2;
-            background: #dd4040;
-            border-radius: 100%;
-            -webkit-transform: rotate(-15deg);
-            transform: rotate(-15deg);
-            box-shadow: -56px 12px 0 1px #dd4040, -126px 6px 0 2px #dd4040, -196px 24px 0 3px #dd4040;
-        }
-
-        .mound_text {
-            -webkit-transform: rotate(6deg);
-            transform: rotate(6deg);
-        }
-
-        .mound_spade {
-            display: block;
-            width: 35px;
-            height: 30px;
-            position: absolute;
-            right: 50%;
-            top: 42%;
-            margin-right: -250px;
-            z-index: 0;
-            -webkit-transform: rotate(35deg);
-            transform: rotate(35deg);
-            background: #dd4040;
-        }
-
-        .mound_spade:before,
-        .mound_spade:after {
-            content: '';
-            display: block;
-            position: absolute;
-        }
-
-        .mound_spade:before {
-            width: 40%;
-            height: 30px;
-            bottom: 98%;
-            left: 50%;
-            margin-left: -20%;
-            background: #dd4040;
-        }
-
-        .mound_spade:after {
-            width: 100%;
-            height: 30px;
-            top: -55px;
-            left: 0%;
-            box-sizing: border-box;
-            border: 10px solid #dd4040;
-            border-radius: 4px 4px 20px 20px;
-        }
-
-        .jz {
-            text-align: center;
-
-        }
-    </style>
-
+* {margin: 0;padding: 0;box-sizing: border-box;}
+body {background: linear-gradient(125deg, #0a0e2a 0%, #1a1f4b 50%, #0c1026 100%);color: #ffffff;font-family: 'Exo 2', sans-serif;min-height: 100vh;overflow: hidden;display: flex;justify-content: center;align-items: center;position: relative;}
+.container {text-align: center;padding: 2rem;z-index: 10;max-width: 800px;}
+.error-code {font-family: 'Orbitron', sans-serif;font-size: 10rem;font-weight: 700;background: linear-gradient(135deg, #6ecbf5 0%, #c779f0 50%, #ff6b6b 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;text-shadow: 0 0 15px rgba(110, 203, 245, 0.3);margin-bottom: 1rem;animation: pulse 3s infinite;}
+.title {font-family: 'Orbitron', sans-serif;font-size: 2.5rem;margin-bottom: 1.5rem;text-transform: uppercase;letter-spacing: 3px;}
+.message {font-size: 1.3rem;line-height: 1.6;margin-bottom: 2.5rem;max-width: 600px;color: #c8d6f5;}
+.btn {display: inline-block;padding: 15px 40px;background: transparent;border: 2px solid #6ecbf5;color: #6ecbf5;font-family: 'Orbitron', sans-serif;font-size: 1.1rem;text-transform: uppercase;text-decoration: none;letter-spacing: 2px;border-radius: 50px;transition: all 0.4s ease;position: relative;overflow: hidden;}
+.btn:hover {background: rgba(110, 203, 245, 0.2);box-shadow: 0 0 20px rgba(110, 203, 245, 0.5);transform: translateY(-3px);}
+.btn:active {transform: translateY(1px);}
+.planet {position: absolute;border-radius: 50%;z-index: 1;}
+.planet-large {width: 200px;height: 200px;background: radial-gradient(circle at 30% 30%, #4a5fc1, #2a3a8a, #1a2357);top: 15%;left: 10%;box-shadow: 0 0 50px rgba(74, 95, 193, 0.5);animation: float 12s infinite ease-in-out;}
+.planet-medium {width: 120px;height: 120px;background: radial-gradient(circle at 30% 30%, #d45c7c, #a83b5e, #7a1e3d);bottom: 20%;right: 15%;box-shadow: 0 0 40px rgba(212, 92, 124, 0.4);animation: float 15s infinite ease-in-out;animation-delay: 2s;}
+.planet-small {width: 80px;height: 80px;background: radial-gradient(circle at 30% 30%, #5cd4a8, #3ba87a, #1e7a55);top: 30%;right: 20%;box-shadow: 0 0 30px rgba(92, 212, 168, 0.4);animation: float 18s infinite ease-in-out;animation-delay: 4s;}
+.satellite {position: absolute;width: 40px;height: 15px;background: #d4d8f0;border-radius: 10px;top: 25%;left: 25%;animation: orbit 20s linear infinite;box-shadow: 0 0 10px rgba(212, 216, 240, 0.7);}
+.satellite::before {content: '';position: absolute;width: 8px;height: 8px;background: #6ecbf5;border-radius: 50%;top: 3.5px;left: 5px;}
+.spaceship {position: absolute;width: 80px;height: 40px;background: #f5f5f7;border-radius: 50% 50% 5px 5px;bottom: 25%;left: 20%;animation: fly 25s linear infinite;z-index: 2;box-shadow: 0 0 15px rgba(245, 245, 247, 0.8);}
+.spaceship::before {content: '';position: absolute;width: 30px;height: 20px;background: #ff6b6b;border-radius: 50% 0 0 50%;top: 10px;left: -15px;}
+.spaceship::after {content: '';position: absolute;width: 15px;height: 30px;background: #6ecbf5;border-radius: 0 5px 5px 0;top: 5px;right: -5px;}
+.stars {position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 0;}
+.star {position: absolute;background-color: #fff;border-radius: 50%;}
+@keyframes pulse {0%, 100% {opacity: 1;text-shadow: 0 0 15px rgba(110, 203, 245, 0.3);}50% {opacity: 0.8;text-shadow: 0 0 25px rgba(110, 203, 245, 0.7);}}
+@keyframes float {0%, 100% {transform: translate(0, 0) rotate(0deg);}25% {transform: translate(10px, 15px) rotate(2deg);}50% {transform: translate(-10px, 20px) rotate(-2deg);}75% {transform: translate(15px, -10px) rotate(3deg);}}
+@keyframes orbit {0% {transform: rotate(0deg) translateX(150px) rotate(0deg);}100% {transform: rotate(360deg) translateX(150px) rotate(-360deg);}}
+@keyframes fly {0% {transform: translateX(-100vw) translateY(0);}50% {transform: translateX(100vw) translateY(-100px);}100% {transform: translateX(200vw) translateY(0);}}
+@media (max-width: 768px) {.error-code {font-size: 8rem;}.title {font-size: 2rem;}.message {font-size: 1.1rem;}.planet-large {width: 150px;height: 150px;top: 10%;left: 5%;}.planet-medium {width: 90px;height: 90px;bottom: 15%;right: 10%;}}
+@media (max-width: 480px) {.error-code {font-size: 6rem;}.title {font-size: 1.6rem;}.message {font-size: 1rem;}.btn {padding: 12px 30px;font-size: 0.9rem;}.planet-large {width: 100px;height: 100px;}.planet-medium {width: 70px;height: 70px;}.planet-small {width: 50px;height: 50px;}}
+</style>
 </head>
-
-<body translate="no">
-    <div class="content">
-        <canvas class="snow" id="snow" width="1349" height="400"></canvas>
-        <div class="main-text">
-            <h1>由于学习任务繁忙，本站暂时断更</h1>
-            <p style="font-size: 32px;">另外，距离2025届中考只剩<span id="l"></span>天了</p>
-            <ul style="margin: 0 auto; width: 500px;">
-            <li style="font-size: 20px;">看完它就去复习，好吗？:)</li>
-
-        </ul>
-
-        </div>
-<!--
-        <p style="font-size: 28px;" class="jz">出现这种情况的原因可能为：</p>
-        <ul style="margin: 0 auto; width: 500px;">
-            <li style="font-size: 20px;">你输入了错误的URL，请检查你是否因手抖而输错网址</li>
-            <li style="font-size: 20px;">网页已被开发者删除，请你当这个网页没有存在过</li>
-            <li style="font-size: 20px;">网页尚未建设完毕，过段时间再来看看吧:）</li>
-        </ul>
-        <div class="main-text-a"><a href="index.html">
-                < 返回 首页</a>
-        </div>
-        -->
-        <div class="ground">
-            <div class="mound">
-                <div class="mound_text">404</div>
-                <div class="mound_spade"></div>
-            </div>
-        </div>
-    </div>
-<script type="text/javascript"> 
-
-    var date1 = new Date(); 
-    var date2 = new Date("06/25/2025"); 
-
-    var Difference_In_Time = date2.getTime() - date1.getTime();
-    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24); 
-    document.getElementById('l').innerHTML =Difference_In_Days ;
+<body>
+<div class="stars" id="stars"></div>
+<div class="planet planet-large"></div>
+<div class="planet planet-medium"></div>
+<div class="planet planet-small"></div>
+<div class="satellite"></div>
+<div class="spaceship"></div>
+<div class="container">
+<h1 class="error-code">404</h1>
+<h2 class="title">页面未找到</h2>
+<p class="message">您试图访问的页面已消失在浩瀚的宇宙中。它可能已被移除、重命名，或者暂时不可用。请检查网址是否正确，或者返回我们的主页继续探索。</p>
+<a href="/" class="btn">返回安全区域</a>
+</div>
+<script>
+function createStars() {
+    const starsContainer = document.getElementById('stars');
+    const starsCount = 200;
+    for (let i = 0; i < starsCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        const size = Math.random() * 3;
+        const opacity = Math.random() * 0.8 + 0.2;
+        star.style.left = `${posX}%`;
+        star.style.top = `${posY}%`;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.opacity = opacity;
+        const duration = Math.random() * 5 + 2;
+        star.style.animation = `pulse ${duration}s infinite`;
+        starsContainer.appendChild(star);
+    }
+}
+window.addEventListener('load', createStars);
 </script>
-
-    <script>
-        (function () {
-            function ready(fn) {
-                if (document.readyState != 'loading') {
-                    fn();
-                } else {
-                    document.addEventListener('DOMContentLoaded', fn);
-                }
-            }
-
-            function makeSnow(el) {
-                var ctx = el.getContext('2d');
-                var width = 0;
-                var height = 0;
-                var particles = [];
-
-                var Particle = function () {
-                    this.x = this.y = this.dx = this.dy = 0;
-                    this.reset();
-                }
-
-                Particle.prototype.reset = function () {
-                    this.y = Math.random() * height;
-                    this.x = Math.random() * width;
-                    this.dx = (Math.random() * 1) - 0.5;
-                    this.dy = (Math.random() * 0.5) + 0.5;
-                }
-
-                function createParticles(count) {
-                    if (count != particles.length) {
-                        particles = [];
-                        for (var i = 0; i < count; i++) {
-                            particles.push(new Particle());
-                        }
-                    }
-                }
-
-                function onResize() {
-                    width = window.innerWidth;
-                    height = window.innerHeight;
-                    el.width = width;
-                    el.height = height;
-
-                    createParticles((width * height) / 10000);
-                }
-
-                function updateParticles() {
-                    ctx.clearRect(0, 0, width, height);
-                    ctx.fillStyle = '#f6f9fa';
-
-                    particles.forEach(function (particle) {
-                        particle.y += particle.dy;
-                        particle.x += particle.dx;
-
-                        if (particle.y > height) {
-                            particle.y = 0;
-                        }
-
-                        if (particle.x > width) {
-                            particle.reset();
-                            particle.y = 0;
-                        }
-
-                        ctx.beginPath();
-                        ctx.arc(particle.x, particle.y, 5, 0, Math.PI * 2, false);
-                        ctx.fill();
-                    });
-
-                    window.requestAnimationFrame(updateParticles);
-                }
-
-                onResize();
-                updateParticles();
-            }
-
-            ready(function () {
-                var canvas = document.getElementById('snow');
-                makeSnow(canvas);
-            });
-        })();
-    </script>
-
 </body>
-
 </html>
